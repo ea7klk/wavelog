@@ -1,0 +1,171 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: wavelog-v-263ee8ad7a50adc5
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: v-263ee8ad7a50adc5
+    namespace: wavelog
+    uid: e7f4c826-38d2-43a9-892b-63eff41dfe9a
+  local:
+    path: /opt/stacks/wavelog/userdata
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - spainip-k3s
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: wavelog-v-2cfcae99c5bd5f54
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: v-2cfcae99c5bd5f54
+    namespace: wavelog
+    uid: 943745d2-3028-4084-8d7b-b97be1d5f525
+  local:
+    path: /opt/k3s-data/volumes/wavelog-uploads
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - spainip-k3s
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: wavelog-v-3fb4855b09401756
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: v-3fb4855b09401756
+    namespace: wavelog
+    uid: e93d28b0-6ec9-4289-94b2-94092034b0ee
+  local:
+    path: /opt/k3s-data/volumes/wavelog-config
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - spainip-k3s
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: wavelog-v-c6de53c50ebb586a
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: v-c6de53c50ebb586a
+    namespace: wavelog
+    uid: 9e25761c-77ad-4fe4-9de4-fcefafe37a87
+  local:
+    path: /opt/k3s-data/volumes/wavelog-dbdata
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - spainip-k3s
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: v-263ee8ad7a50adc5
+  namespace: wavelog
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ""
+  volumeMode: Filesystem
+  volumeName: wavelog-v-263ee8ad7a50adc5
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: v-2cfcae99c5bd5f54
+  namespace: wavelog
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ""
+  volumeMode: Filesystem
+  volumeName: wavelog-v-2cfcae99c5bd5f54
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: v-3fb4855b09401756
+  namespace: wavelog
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ""
+  volumeMode: Filesystem
+  volumeName: wavelog-v-3fb4855b09401756
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: v-c6de53c50ebb586a
+  namespace: wavelog
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ""
+  volumeMode: Filesystem
+  volumeName: wavelog-v-c6de53c50ebb586a
