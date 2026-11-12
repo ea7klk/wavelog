@@ -1,28 +1,6 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: wavelog-v-263ee8ad7a50adc5
-spec:
-  accessModes:
-  - ReadWriteOnce
-  capacity:
-    storage: 1Gi
-  local:
-    path: /opt/stacks/wavelog/userdata
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - spainip-k3s
-  persistentVolumeReclaimPolicy: Retain
-  volumeMode: Filesystem
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
   name: wavelog-v-2cfcae99c5bd5f54
 spec:
   accessModes:
@@ -96,10 +74,9 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: ""
+      storage: 2Gi
+  storageClassName: retained-local-path
   volumeMode: Filesystem
-  volumeName: wavelog-v-263ee8ad7a50adc5
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -112,7 +89,7 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: ""
+  storageClassName: ''
   volumeMode: Filesystem
   volumeName: wavelog-v-2cfcae99c5bd5f54
 ---
@@ -127,7 +104,7 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: ""
+  storageClassName: ''
   volumeMode: Filesystem
   volumeName: wavelog-v-3fb4855b09401756
 ---
@@ -142,6 +119,6 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: ""
+  storageClassName: ''
   volumeMode: Filesystem
   volumeName: wavelog-v-c6de53c50ebb586a
