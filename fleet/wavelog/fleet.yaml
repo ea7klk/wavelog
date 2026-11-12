@@ -3,33 +3,3 @@ kustomize:
   dir: .
 helm:
   takeOwnership: true
-diff:
-  comparePatches:
-  - apiVersion: v1
-    kind: PersistentVolumeClaim
-    name: v-263ee8ad7a50adc5
-    namespace: wavelog
-    operations:
-    - op: remove
-      path: /spec/volumeName
-  - apiVersion: v1
-    kind: PersistentVolumeClaim
-    name: v-2cfcae99c5bd5f54
-    namespace: wavelog
-    operations:
-    - op: remove
-      path: /spec/volumeName
-  - apiVersion: v1
-    kind: PersistentVolumeClaim
-    name: v-3fb4855b09401756
-    namespace: wavelog
-    operations:
-    - op: remove
-      path: /spec/volumeName
-  - apiVersion: v1
-    kind: PersistentVolumeClaim
-    name: v-c6de53c50ebb586a
-    namespace: wavelog
-    operations:
-    - op: remove
-      path: /spec/volumeName
